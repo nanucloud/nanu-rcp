@@ -1,7 +1,7 @@
 
 from typing import List, Optional
-from ..domain.redis.domain import RedisInstance, RedisStatus
-from database import Database
+from  domain.redis.domain import RedisInstance, RedisStatus
+from infra.database import Database
 
 class RedisRepository:
     def __init__(self, database: Database):

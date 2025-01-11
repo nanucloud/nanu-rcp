@@ -1,8 +1,9 @@
 import subprocess
 import redis
-from domain import RedisInstance, RedisStatus
-from ..process.service import ProcessManager
-from ...infra.repository import RedisRepository
+from typing import List 
+from domain.redis.domain import RedisInstance, RedisStatus
+from domain.process.service import ProcessManager
+from infra.repository import RedisRepository
 
 class RedisService:
     def __init__(self, repository: RedisRepository):
