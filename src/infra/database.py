@@ -1,7 +1,6 @@
 import sqlite3
 from datetime import datetime
 from contextlib import contextmanager
-from domain.redis.domain import RedisInstance, RedisStatus 
 
 class Database:
     def __init__(self, db_path: str = 'redis_manager.db'):
@@ -26,7 +25,9 @@ class Database:
                     config_path TEXT,
                     data_dir TEXT,
                     created_at TIMESTAMP,
-                    status TEXT
+                    status TEXT,
+                    service_status INTEGER DEFAULT 0,
+                    password TEXT
                 )
             ''')
             conn.commit()
