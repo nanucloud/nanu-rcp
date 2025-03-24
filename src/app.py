@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 from infra.database import Database
+from flask_cors import CORS
 from infra.repository import RedisRepository
 from domain.redis.service import RedisService
 from domain.process.service import ProcessManager
@@ -8,6 +9,7 @@ import psutil
 from datetime import datetime
 
 app = Flask(__name__)
+CORS(app)
 
 database = Database()
 repository = RedisRepository(database)
